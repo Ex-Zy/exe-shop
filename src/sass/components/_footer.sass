@@ -1,0 +1,39 @@
+.footer
+	position: relative
+	text-align: center
+	color: #575757
+	font-size: 14px
+	flex: none
+	&__top
+		background-color: #252525
+		padding: 80px 0
+	&__bottom
+		background-color: #1E1E1E
+	&__desc
+		max-width: 660px
+		display: block
+		margin: 30px auto 0
+.copy
+	margin: 30px auto 0
+	max-width: 250px
+	color: #464646
+	font-size: 13px
+	line-height: (20/13) 
+	span
+		color: #959595
+.payments
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	font-size: 20px
+	padding: 26px 0 
+	&__item
+		display: inline-block
+		vertical-align: middle
+		padding: 0 7px
+		line-height: 0
+	.icon
+		fill: $dark
+		+tr(fill 0.25s)
+		&:hover
+			fill: $active

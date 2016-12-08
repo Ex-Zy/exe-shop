@@ -1,5 +1,39 @@
 body
-  background: #FFF
-  font-size: 16px
-  line-height: 1.4
+	background: #FFF
+	+smooth-font
+	font-size: 16px
+	line-height: 1.4
+	+roboto-reg
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+.out
+	flex-grow: 1
+	flex-shrink: 1
+	flex-basis: auto
 
+a
+	text-decoration: none
+	color: inherit
+
+%inner
+	margin: 0 auto
+	padding: 0 30px
+	width: 1230px
+	+clr
+.inner
+	@extend %inner
+
+//icons
+.icon-user
+	font-size: 17px
+	fill: #000
+.icon-heart
+	font-size: 16px
+	fill: #000
+.icon-cart
+	font-size: 17px
+	fill: #000
+.icon-search
+	font-size: 19px
+	fill: #000

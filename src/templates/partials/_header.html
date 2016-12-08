@@ -1,1 +1,50 @@
-<p>Hello from partials/_header.html</p>
+<!-- BEGIN header -->
+<header class="header">
+	<!-- BEGIN inner -->
+	<div class="inner">
+		<!-- BEGIN header__top -->
+		<div class="header__top">
+			<div class="logo">
+				<a href="#"><img src="img/logo-black.png" alt=""></a>
+			</div>
+		</div>
+		<!-- END header__top -->
+		<!-- BEGIN header__middle -->
+		<div class="header__middle">
+			<nav class="nav">
+				<a href="#">Home</a>       
+				<a href="#" class="is-active">Women</a>       
+				<a href="#">Men</a>      
+				<a href="#">Shoes</a>      
+				<a href="#">Accessories       
+				<a href="#">Sale Off</a>        
+				<a href="#">Collections </a>       
+				<a href="#">Contacts</a>
+			</nav>
+		</div>
+		<!-- END header__middle -->
+		<!-- BEGIN header__bottom -->
+		<div class="header__bottom">
+			<ul class="panel-list">
+				<li class="panel-list__item"><a href="#">
+					{{mixins.icon('user')}}
+				</a></li>
+				<li class="panel-list__item"><a href="#">
+					{{mixins.icon('heart')}}
+				</a></li>
+				<li class="panel-list__item"><a href="#">
+					<div class="cart is-full">
+						{{mixins.icon('cart')}}
+						<div class="cart__numeric">2</div>
+					</div>
+				</a></li>
+				<li class="panel-list__item"><a href="#">
+					{{mixins.icon('search')}}
+				</a></li>
+			</ul>
+		</div>
+		<!-- END header__bottom -->
+	</div>
+	<!-- END inner -->
+</header>
+<!-- END header -->
