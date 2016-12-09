@@ -34,24 +34,6 @@ $slick-opacity-not-active: 0.25 !default;
     }
 }
 
-/* Slider */
-
-.slick-list {
-    .slick-loading & {
-        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
-    }
-}
-
-/* Icons */
-@if $slick-font-family == "slick" {
-    @font-face {
-        font-family: "slick";
-        src: slick-font-url("slick.eot");
-        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
-        font-weight: normal;
-        font-style: normal;
-    }
-}
 
 /* Arrows */
 
@@ -156,17 +138,17 @@ $slick-opacity-not-active: 0.25 !default;
                 width: 10px;
                 box-sizing: border-box;
                 border-radius: 50%;
-                background: #979795;
+                background: rgba(255, 255, 255, 0.4);
                 transition: all 0.1s ease;
             }
             &:hover {
                 &:before {
-                   background: #4E4E4E;
+                   background: #fff;
                 }
             }
         }
         &.slick-active button:before {
-            background: #4E4E4E;
+            background: #fff;
         }
     }
 }

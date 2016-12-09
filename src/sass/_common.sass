@@ -1,16 +1,17 @@
+html,
+body
+	height: 100%
+
 body
 	background: #FFF
 	+smooth-font
 	font-size: 16px
 	line-height: 1.4
 	+roboto-reg
-	min-height: 100vh
 	display: flex
 	flex-direction: column
 .out
-	flex-grow: 1
-	flex-shrink: 1
-	flex-basis: auto
+	flex: auto
 
 a
 	text-decoration: none
@@ -25,6 +26,9 @@ a
 	@extend %inner
 
 //icons
+.icon
+	display: inline-block
+	vertical-align: middle
 .icon-user
 	font-size: 17px
 	fill: #000

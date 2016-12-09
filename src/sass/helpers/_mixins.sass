@@ -250,14 +250,41 @@
       content: counter(list + $var) $sep
       counter-increment: list + $var
 
-=f($name, $font-size: null, $letter-spacing: null)
+=f($name, $font-size, $line-height, $letter-spacing: null)
   $font-family: null
-  @if $name == "l"
-    $font-family: "light"
-  font-family: $font-family
-  font-weight: normal
+  // Roboto
+  @if $name == "r-reg"
+    $font-family: "Roboto Regular", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  @if $name == "r-bold"
+    $font-family: "Roboto Bold", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  @if $name == "r-black"
+    $font-family: "Roboto Black", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  @if $name == "r-black-i"
+    $font-family: "Roboto BlackItalic", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  // Raleway
+  @if $name == "r"
+    $font-family: "Raleway Regular", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  @if $name == "s"
+    $font-family: "Raleway Semibold", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  @if $name == "b"
+    $font-family: "Raleway Bold", Arial, Helvetica, sans-serif
+    font-family: $font-family
+  @if $name == "e"
+    $font-family: "Raleway ExtraBold", Arial, Helvetica, sans-serif
+    font-family: $font-family
   @if $font-size != null
     font-size: $font-size + px
+  @if $line-height != null and $line-height != 1
+    line-height: ($line-height / $font-size)
+  @if $line-height == 1
+    line-height: $line-height
   @if $letter-spacing != null
     letter-spacing: ($letter-spacing / 1000) + em
+  font-weight: normal
 

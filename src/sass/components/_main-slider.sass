@@ -1,0 +1,79 @@
+.slider-wrp
+	position: relative
+.main-slider
+	opacity: 0
+	+trans(opacity 0.25s)
+	&.is-ready
+		opacity: 1
+	&__item
+		height: 721px
+		background-color: #efefef
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+.slogan
+	max-width: 700px
+	text-align: center
+	padding-top: 160px
+	+gpu
+	&__title-h1,
+	&__title-h2
+		color: #fff
+		text-transform: uppercase
+	&__title-h1
+		+f(e, 98, 80, null)
+	&__title-h2
+		+f(e, 48, 80, null)
+		span
+			background-color: $active
+			line-height: 52px
+			display: inline-block
+			vertical-align: baseline
+			padding: 0 6px
+	&__body
+		padding: 40px 0 30px
+		position: relative
+		margin: 10px 0 28px
+		&:before,
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			width: 170px
+			height: 2px
+			background-color: #fff
+			left: 0
+			right: 0
+			top: 0
+			margin: auto
+		&:after
+			top: auto
+			bottom: 0
+	&__meta
+		color: #b7b7b7
+		max-width: 390px
+		margin: 0 auto
+.btn-main-slider
+	width: 42px
+	height: 42px
+	background-color: #fff
+	+trans(background-color, 0.25s)
+	+vertical
+	position: absolute
+	top: 50%
+	margin-top: -21px
+	&:hover
+		background-color: #363636
+		.icon
+			fill: #fff
+	.icon
+		font-size: 15px
+		fill: #ddd
+		+trans(fill, 0.25s)
+	&-prev
+		padding-right: 4px
+		left: 0
+	&-next
+		padding-left: 4px
+		right: 0
+

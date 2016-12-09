@@ -137,13 +137,13 @@ html {
   font-style: normal;
 }
 
-.icon-arrow-left {
+.icon-arrow-next {
   width: 0.55em;
   height: 1em;
   fill: initial;
 }
 
-.icon-arrow-right {
+.icon-arrow-prev {
   width: 0.55em;
   height: 1em;
   fill: initial;
@@ -318,20 +318,6 @@ html {
   border: 1px solid transparent;
 }
 
-/* Slider */
-.slick-loading .slick-list {
-  background: #fff url("../img/ajax-loader.gif") center center no-repeat;
-}
-
-/* Icons */
-@font-face {
-  font-family: "slick";
-  src: url("../fonts/slick.eot");
-  src: url("../fonts/slick.eot?#iefix") format("embedded-opentype"), url("../fonts/slick.woff") format("woff"), url("../fonts/slick.ttf") format("truetype"), url("../fonts/slick.svg#slick") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Arrows */
 .slick-prev,
 .slick-next {
@@ -449,16 +435,16 @@ html {
   width: 10px;
   box-sizing: border-box;
   border-radius: 50%;
-  background: #979795;
+  background: rgba(255, 255, 255, 0.4);
   transition: all 0.1s ease;
 }
 
 .slick-dots li button:hover:before {
-  background: #4E4E4E;
+  background: #fff;
 }
 
 .slick-dots li.slick-active button:before {
-  background: #4E4E4E;
+  background: #fff;
 }
 
 /*-----------------------------------*  $TOAST-GRID
@@ -803,6 +789,11 @@ html {
   vertical-align: middle;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: #FFF;
   -webkit-font-smoothing: antialiased;
@@ -811,7 +802,6 @@ body {
   line-height: 1.4;
   font-family: "Roboto Regular", Arial, Helvetica, sans-serif;
   font-weight: normal;
-  min-height: 100vh;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -821,15 +811,9 @@ body {
 }
 
 .out {
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
 }
 
 a {
@@ -848,6 +832,11 @@ a {
   content: " ";
   display: table;
   clear: both;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .icon-user {
@@ -879,6 +868,7 @@ a {
 .header {
   background-color: #FFF;
   height: 275px;
+  line-height: 1;
   position: relative;
   text-align: center;
 }
@@ -914,7 +904,7 @@ a {
   font-size: 0;
 }
 
-.nav a {
+.nav__link {
   color: #555;
   display: inline-block;
   font-size: 14px;
@@ -927,7 +917,7 @@ a {
   transition: color 0.25s;
 }
 
-.nav a:after {
+.nav__link:after {
   background-color: #e5493a;
   bottom: 0;
   content: '';
@@ -944,11 +934,11 @@ a {
   transition: transform 0.25s, -webkit-transform 0.25s;
 }
 
-.nav a.is-active, .nav a:hover {
+.nav__link.is-active, .nav__link:hover {
   color: #e5493a;
 }
 
-.nav a.is-active:after, .nav a:hover:after {
+.nav__link.is-active:after, .nav__link:hover:after {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -1054,6 +1044,136 @@ a {
 
 .payments .icon:hover {
   fill: #e5493a;
+}
+
+.slider-wrp {
+  position: relative;
+}
+
+.main-slider {
+  opacity: 0;
+  transition: opacity 0.25s 0.2s ease;
+}
+
+.main-slider.is-ready {
+  opacity: 1;
+}
+
+.main-slider__item {
+  height: 721px;
+  background-color: #efefef;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.slogan {
+  max-width: 700px;
+  text-align: center;
+  padding-top: 160px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slogan__title-h1, .slogan__title-h2 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.slogan__title-h1 {
+  font-family: "Raleway ExtraBold", Arial, Helvetica, sans-serif;
+  font-size: 98px;
+  line-height: 0.81633;
+  font-weight: normal;
+}
+
+.slogan__title-h2 {
+  font-family: "Raleway ExtraBold", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  line-height: 1.66667;
+  font-weight: normal;
+}
+
+.slogan__title-h2 span {
+  background-color: #e5493a;
+  line-height: 52px;
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 0 6px;
+}
+
+.slogan__body {
+  padding: 40px 0 30px;
+  position: relative;
+  margin: 10px 0 28px;
+}
+
+.slogan__body:before, .slogan__body:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 170px;
+  height: 2px;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+}
+
+.slogan__body:after {
+  top: auto;
+  bottom: 0;
+}
+
+.slogan__meta {
+  color: #b7b7b7;
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.btn-main-slider {
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+  transition: background-color 0.25s ease;
+  text-align: center;
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -21px;
+}
+
+.btn-main-slider:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+
+.btn-main-slider:hover {
+  background-color: #363636;
+}
+
+.btn-main-slider:hover .icon {
+  fill: #fff;
+}
+
+.btn-main-slider .icon {
+  font-size: 15px;
+  fill: #ddd;
+  transition: fill 0.25s ease;
+}
+
+.btn-main-slider-prev {
+  padding-right: 4px;
+  left: 0;
+}
+
+.btn-main-slider-next {
+  padding-left: 4px;
+  right: 0;
 }
 
 @media (max-width: 1023px) and (min-width: 599px){
